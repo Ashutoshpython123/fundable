@@ -16,9 +16,9 @@ app.use(cookieParser());
 
 
 //routes
-app.use("/",  (req, res) => {
-    res.json('hello')
-});
+// app.use("/",  (req, res) => {
+//     res.json('hello')
+// });
 
 
 // mongoose.connect(
