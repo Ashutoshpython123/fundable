@@ -9,5 +9,12 @@
     },
     "scripts": {
         "test": "mocha --recursive tests"
+    },
+    "dependencies": {
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "mongoose": "^6.2.5",
+        "path": "^0.12.7"
     }
 }
