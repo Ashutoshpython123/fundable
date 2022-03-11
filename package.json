@@ -8,7 +8,7 @@
         "unit.js": "2.0.0"
     },
     "scripts": {
-        "server": "nodemon index.js"
+        "test": "mocha --recursive tests"
     },
     "dependencies": {
         "cookie-parser": "^1.4.6",

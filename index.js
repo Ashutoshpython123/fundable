@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
+
 //App config
 const app = express();
 app.use(express.json({ limit: '50mb' }));
@@ -24,7 +25,7 @@ mongoose.connect(
 	process.env.CONNECTION_URL,
 	{
 		useNewUrlParser: true,
-		// useCreateIndex: true,                                    
+		// useCreateIndex: true,
 		// useUnifiedTopology: true,
 		// useFindAndModify: false,
 	},
@@ -34,16 +35,16 @@ mongoose.connect(
 	},
 );
 
-// app.get = function(event, context, callback) {
-//   var contents = fs.readFileSync(`public${path.sep}index.html`);
-//   var result = {
-//     statusCode: 200,
-//     body: contents.toString(),
-//     headers: {'content-type': 'text/html'}
-//   };
+exports.get = function(event, context, callback) {
+  var contents = fs.readFileSync(`public${path.sep}index.html`);
+  var result = {
+    statusCode: 200,
+    body: contents.toString(),
+    headers: {'content-type': 'text/html'}
+  };
 
-//   callback(null, result);
-// };
+  callback(null, result);
+};
 
 //listener
 // if (process.env.NODE_ENV === "production") {
@@ -58,3 +59,5 @@ const port = process.env.PORT;
 app.listen(port, () => {
 	console.log(`listening port localhost : ${port}`);
 });
+
+
