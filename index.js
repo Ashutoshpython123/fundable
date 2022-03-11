@@ -55,9 +55,9 @@ exports.get = function(event, context, callback) {
 // }
 
 //listener
-const port = process.env.PORT;
-app.listen(port, () => {
-	console.log(`listening port localhost : ${port}`);
-});
+// const port = process.env.PORT;
+// app.listen(port, () => {
+// 	console.log(`listening port localhost : ${port}`);
+// });
 
 
