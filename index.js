@@ -21,19 +21,19 @@ app.use("/",  (req, res) => {
 });
 
 
-mongoose.connect(
-	process.env.CONNECTION_URL,
-	{
-		useNewUrlParser: true,
-		// useCreateIndex: true,
-		// useUnifiedTopology: true,
-		// useFindAndModify: false,
-	},
-	(err) => {
-		if (err) throw err;
-		console.log("connected to mongodb");
-	},
-);
+// mongoose.connect(
+// 	process.env.CONNECTION_URL,
+// 	{
+// 		useNewUrlParser: true,
+// 		// useCreateIndex: true,
+// 		// useUnifiedTopology: true,
+// 		// useFindAndModify: false,
+// 	},
+// 	(err) => {
+// 		if (err) throw err;
+// 		console.log("connected to mongodb");
+// 	},
+// );
 
 exports.get = function(event, context, callback) {
   var contents = fs.readFileSync(`public${path.sep}index.html`);
