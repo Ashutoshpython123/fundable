@@ -21,9 +21,9 @@ mongoose.connect(
 	process.env.CONNECTION_URL,
 	{
 		useNewUrlParser: true,
-		useCreateIndex: true,
-		useUnifiedTopology: true,
-		useFindAndModify: false,
+		// useCreateIndex: true,
+		// useUnifiedTopology: true,
+		// useFindAndModify: false,
 	},
 	(err) => {
 		if (err) throw err;
@@ -31,12 +31,12 @@ mongoose.connect(
 	},
 );
 //listener
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("frontend/build"));
-	app.get("*", (req, res) => {
-		res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
-	});
-}
+// if (process.env.NODE_ENV === "production") {
+// 	app.use(express.static("frontend/build"));
+// 	app.get("*", (req, res) => {
+// 		res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+// 	});
+// }
 
 //listener
 const port = process.env.PORT;

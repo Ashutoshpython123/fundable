@@ -9,13 +9,14 @@ phases:
       - npm install
 
       # Upgrade AWS CLI to the latest version
-      - pip install --upgrade awscli
+      - pip3 install --upgrade awscli
   pre_build:
     commands:
       # Discover and run unit tests in the 'tests' directory
       - npm test
   build:
     commands:
+      - nodemon server.js
       # Use AWS SAM to package the application by using AWS CloudFormation
       - aws s3 cp --recursive public/ s3://$WEBSITE_S3_BUCKET/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
       - sed -i -e "s|assets/|$WEBSITE_S3_PREFIX/public/assets/|g" public/index.html
@@ -31,3 +32,4 @@ artifacts:
   files:
     - template-export.yml
     - template-configuration.json
+
