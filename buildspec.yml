@@ -7,7 +7,6 @@ phases:
     commands:
       # Install dependencies needed for running tests
       - npm install
-
       # Upgrade AWS CLI to the latest version
       - pip3 install --upgrade awscli
   pre_build:
