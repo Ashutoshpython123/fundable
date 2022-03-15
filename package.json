@@ -14,7 +14,7 @@
     },
     "scripts": {
         "dev": "node server",   
-        "start": "cd test && npm run start",      
+        "frontend": "cd test && npm run start",      
         "test": "mocha --recursive tests --exit"
     },
     "dependencies": {
