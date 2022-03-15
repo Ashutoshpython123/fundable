@@ -13,7 +13,8 @@
         "unit.js": "2.0.0"
     },
     "scripts": {
-        "start": "node server",        
+        "dev": "node server",   
+        "start": "cd test && npm run start",      
         "test": "mocha --recursive tests --exit"
     },
     "dependencies": {
