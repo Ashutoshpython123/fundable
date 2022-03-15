@@ -4,17 +4,20 @@
     "version": "0.0.1",
     "private": true,
     "devDependencies": {
-        "@babel/core": "^7.12.3",
-        "@babel/preset-env": "^7.12.1",
-        "@babel/preset-react": "^7.12.5",
-        "babel-loader": "^8.1.0",
-        "html-webpack-plugin": "^4.5.0",
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.4",
+        "@testing-library/user-event": "^13.5.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "5.0.0",
+        "web-vitals": "^2.1.4",
         "mocha": "5.0.0",
         "unit.js": "2.0.0"
     },
     "scripts": {
-        "dev": "node server",   
-        "frontend": "cd test && npm run start",      
+        "dev": "node server",
+        "build": "react-scripts build",
+        "start": "react-scripts start",
         "test": "mocha --recursive tests --exit"
     },
     "dependencies": {
@@ -24,5 +27,23 @@
         "mongoose": "^6.2.5",
         "nodemon": "^2.0.15",
         "path": "^0.12.7"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }
