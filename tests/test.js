@@ -9,7 +9,7 @@ describe('Tests index', function() {
       try {
         test.number(result.statusCode).is(200);
         // test.string(result.body).contains('Congratulations');
-        test.value(result).hasHeader('content-type', 'text/html');
+        test.value(result).hasHeader('content-type', 'text/plain');
         done();
       } catch(error) {
         done(error);
