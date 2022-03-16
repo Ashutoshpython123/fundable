@@ -14,7 +14,7 @@ app.use(express.static(DIST_DIR));
 app.get('/api', (req, res) => {
   res.send(mockResponse);
 });
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(HTML_FILE); // EDIT
 });
 app.listen(port, function () {
