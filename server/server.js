@@ -11,9 +11,13 @@ app.use(cookieParser());
 
 
 
-routes
+// routes
 app.use("/",  (req, res) => {
-    res.json('hello')
+	app.use(express.static("dist"));
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "dist",  "index.html"));
+
+	});
 });
 
 
@@ -32,9 +36,9 @@ mongoose.connect(
 );
 //listener
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static("frontend/build"));
+	app.use(express.static("dist"));
 	app.get("*", (req, res) => {
-		res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+		res.sendFile(path.join(__dirname, "dist",  "index.html"));
 	});
 }
 
