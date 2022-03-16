@@ -1,11 +1,10 @@
 'use strict';
 
 var fs = require('fs');
-const path = require("path");
-
+var path = require('path');
 
 exports.get = function(event, context, callback) {
-  var contents = fs.readFileSync(`build${path.sep}index.html`);
+  var contents = fs.readFileSync(`frontend/build${path.sep}index.html`);
   var result = {
     statusCode: 200,
     body: contents.toString(),
@@ -14,4 +13,3 @@ exports.get = function(event, context, callback) {
 
   callback(null, result);
 };
-

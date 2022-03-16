@@ -1,19 +1,14 @@
-'use strict';
+const request = require('supertest');
+const express = require('express');
 
-var test = require('unit.js');
-var index = require('../index.js');
+const app = express();
 
-describe('Tests index', function() {
-  it('verifies successful response', function(done) {
-    index.get({ /* event */ }, { /* context */ }, (err, result) => {
-      try {
-        test.number(result.statusCode).is(200);
-        // test.string(result.body).contains('Congratulations');
-        test.value(result).hasHeader('content-type', 'text/html');
-        done();
-      } catch(error) {
-        done(error);
-      }
-    });
-  });
+app.get('/', function (req, res) {
+  res.status(200);
 });
+
+request(app)
+  .expect(200)
+  .end(function (err, res) {
+    if (err) throw err;
+  });

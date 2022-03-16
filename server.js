@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 
 
-//routes
+routes
 app.use("/",  (req, res) => {
     res.json('hello')
 });
@@ -31,14 +31,14 @@ mongoose.connect(
 	},
 );
 //listener
-// if (process.env.NODE_ENV === "production") {
-// 	app.use(express.static("frontend/build"));
-// 	app.get("*", (req, res) => {
-// 		res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
-// 	});
-// }
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("frontend/build"));
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+	});
+}
 
-listener
+// listener
 const port = process.env.PORT;
 app.listen(port, () => {
 	console.log(`listening port localhost : ${port}`);
